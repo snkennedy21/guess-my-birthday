@@ -2,6 +2,8 @@ from calendar import month
 import code
 from random import randint
 
+# Using a While loop
+
 name = input("Hi! What's your name: ")
 
 max_year = 2004
@@ -22,19 +24,17 @@ while i >= 0:
     print('invalid input')
     player_response = input(f'{i} Guesses Remaining: {name} were you born in {month_guess} / {year_guess} (y)es or (n)o: ')
 
-
   if player_response.lower() == 'n':
     i = i - 1
     print('Drat! Let me try again!')
     month_guess = randint(0, len(month_list))
     year_guess = randint(min_year, max_year)
     player_response = input(f'{i} Guesses Remaining: {name} were you born in {month_guess} / {year_guess} (y)es or (n)o: ')
+
   if player_response.lower() == 'y':
     print('I knew it!')
     break
 
-  if i == 1:
+  if i == 1 and player_response.lower() == 'n' :
     print('I have more important things to do')
     break
-
-
